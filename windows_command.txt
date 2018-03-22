@@ -1,0 +1,17 @@
+# open a txt
+>notepad ABC.txt
+
+# create a folder
+>mkdir ABC
+
+# list a files
+>dir
+
+# create a new file
+>abc > ABC.txt
+
+# move a file
+> move ABC.txt c:\Users
+> move ABC.txt, CDB.txt c:\Users
+> move *.txt c:\Users
+> move *.txt .\doucments\

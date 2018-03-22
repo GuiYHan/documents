@@ -1,0 +1,30 @@
+# repos from a new computer:
+
+git clone https://...
+
+git add . # add all files 
+
+git commit -m "message' # if -m not enter: enter message on popup and ESC + :wq + Enter
+
+git push --set-upstream origin master # or git push to push to the default branch
+
+
+
+# find/get existing branch
+
+git pull
+
+git checkout to-the-branch
+
+git add . and git commit
+
+git push
+
+
+#  check what is in add:
+git status
+
+# remove a git add:
+git reset  # to undo all
+git reset afile.txt
+

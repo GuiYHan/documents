@@ -4,9 +4,10 @@ git clone https://...
 
 git add . # add all files 
 
-git commit -m "message' # if -m not enter: enter message on popup and ESC + :wq + Enter
+git commit -m "message' # if -m not enter: enter message on popup and type ESC + :wq + Enter
 
 git push --set-upstream origin master # or git push to push to the default branch
+                                      # this will make the branch on air.
 
 
 
@@ -28,3 +29,5 @@ git status
 git reset  # to undo all
 git reset afile.txt
 
+# if you changed the password and push failed
+git remote show origin

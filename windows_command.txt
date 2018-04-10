@@ -15,3 +15,7 @@
 > move ABC.txt, CDB.txt c:\Users
 > move *.txt c:\Users
 > move *.txt .\doucments\
+
+# delete
+>del *.txt
+>rmdir example /s # to delete a folder and all in it.

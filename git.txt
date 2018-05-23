@@ -1,6 +1,8 @@
 # repos from a new computer:
 
 git clone https://...
+fit clone https://ghan@gitetctec.   # this will take you to the password screen
+
 
 git add . # add all files 
 
@@ -21,6 +23,9 @@ git add . and git commit
 
 git push
 
+# list all branch local and remote
+git branch -a
+
 
 #  check what is in add:
 git status
@@ -31,3 +36,43 @@ git reset afile.txt
 
 # if you changed the password and push failed
 git remote show origin
+
+# if you make a comit locally and you dont want to
+git reset HEAD~
+
+# if your local is diversed from the tree
+git clean  -d  -fx .                   # this will delete the local copy
+
+
+# check for unpushed commits
+git log --branches --not --remotes
+# check for commit: 
+git log
+git log -n 10 # return most recent 10.
+
+
+#  how to hard reset a file 
+git checkout HEAD -- my-file.txt
+
+Type 1. Staged Tracked files
+Type 2. Unstaged Tracked files
+Type 3. Unstaged UnTracked files a.k.a UnTracked files
+
+Staged - Those that are moved to staging area/ Added to index
+Tracked - modified files
+UnTracked - new files. Always unstaged. If staged, that means they are tracked.
+What each commands do:
+
+git checkout . - Removes Unstaged Tracked files ONLY [Type 2]
+git clean -f - Removes Unstaged UnTracked files ONLY [Type 3]
+git reset --hard - Removes Staged Tracked and UnStaged Tracked files ONLY[Type 1, Type 2]
+git stash -u - Removes all changes [Type 1, Type 2, Type 3]
+
+
+## stash and restore
+
+git stash
+git stash list
+git stash apply
+git stash apply stash@{2}
+

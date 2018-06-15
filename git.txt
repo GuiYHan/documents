@@ -76,3 +76,8 @@ git stash list
 git stash apply
 git stash apply stash@{2}
 
+## revert a pushed commit
+
+git log - see what is the long hash value of each commit
+git revert <hash_value>
+git revert -m 1 <hash_value>

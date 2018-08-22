@@ -17,6 +17,7 @@ class Date(object):
         return day <= 31 and month <= 12 and year <= 3999
 
 
+
 So what we must do here is:
 
 Parse a string to receive day, month and year as three integer variables or a 3-item tuple consisting of that variable.
@@ -25,7 +26,8 @@ This will look like:
 
 day, month, year = map(int, string_date.split('-'))
 date1 = Date(day, month, year)
-#For this purpose, C++ has such feature as overloading, but Python lacks that feature- so here's when classmethod applies. Lets create another "constructor".
+
+# Class Method
 
     @classmethod
     def from_string(cls, date_as_string):
@@ -41,7 +43,7 @@ Encapsulation works fine here (if you think that you could implement string pars
 cls is an object that holds class itself, not an instance of the class. It's pretty cool because if we inherit our Date class, all children will have from_string defined also.
 
 
-#Static method
+# Static method
 
 What about staticmethod? It's pretty similar to classmethod but doesn't take any obligatory parameters (like a class method or instance method does).
 

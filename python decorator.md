@@ -60,3 +60,5 @@ Here is where staticmethod can be useful. Let's look at the next piece of code:
 
     # usage:
     is_date = Date.is_date_valid('11-09-2012')
+
+And it dont have to be related to self, or cls

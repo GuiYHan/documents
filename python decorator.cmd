@@ -16,26 +16,6 @@ class Date(object):
         day, month, year = map(int, date_as_string.split('-'))
         return day <= 31 and month <= 12 and year <= 3999
 
-date2 = Date.from_string('11-09-2012')
-is_date = Date.is_date_valid('11-09-2012')
-Explanation
-Let's assume an example of a class, dealing with date information (this is what will be our boilerplate to cook on):
-
-class Date(object):
-
-    def __init__(self, day=0, month=0, year=0):
-        self.day = day
-        self.month = month
-        self.year = year
-This class obviously could be used to store information about certain dates (without timezone information; let's assume all dates are presented in UTC).
-
-Here we have __init__, a typical initializer of Python class instances, which receives arguments as a typical instancemethod, having the first non-optional argument (self) that holds reference to a newly created instance.
-
-Class Method
-
-We have some tasks that can be nicely done using classmethods.
-
-Let's assume that we want to create a lot of Date class instances having date information coming from outer source encoded as a string of next format ('dd-mm-yyyy'). We have to do that in different places of our source code in project.
 
 So what we must do here is:
 
@@ -45,7 +25,7 @@ This will look like:
 
 day, month, year = map(int, string_date.split('-'))
 date1 = Date(day, month, year)
-For this purpose, C++ has such feature as overloading, but Python lacks that feature- so here's when classmethod applies. Lets create another "constructor".
+#For this purpose, C++ has such feature as overloading, but Python lacks that feature- so here's when classmethod applies. Lets create another "constructor".
 
     @classmethod
     def from_string(cls, date_as_string):
@@ -59,7 +39,9 @@ Let's look more carefully at the above implementation, and review what advantage
 We've implemented date string parsing in one place and it's reusable now.
 Encapsulation works fine here (if you think that you could implement string parsing as a single function elsewhere, this solution fits OOP paradigm far better).
 cls is an object that holds class itself, not an instance of the class. It's pretty cool because if we inherit our Date class, all children will have from_string defined also.
-Static method
+
+
+#Static method
 
 What about staticmethod? It's pretty similar to classmethod but doesn't take any obligatory parameters (like a class method or instance method does).
 
